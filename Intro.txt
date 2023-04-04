@@ -108,7 +108,7 @@ In summary, the OrnsteinUhlenbeckProcess class is used in the deep reinforcement
 
 
 ------------------------------------------------------------------------------
-what does the PortfolioManager class do?
+what does the 'PortfolioManager' class do?
 ------------------------------------------------------------------------
 
 
@@ -128,3 +128,16 @@ In summary, the PortfolioManager class is a critical component of the deep reinf
 
 
 ----------------------------------------------------------------------------
+what does the 'Environment' class do?
+-----------------------------------------------------------------------
+
+
+The Environment class in the deep reinforcement learning framework proposed by the paper represents the financial market environment in which the agent operates.
+
+In the context of this framework, the Environment class provides the agent with observations (i.e., stock prices, economic indicators) and rewards (i.e., portfolio returns) based on the actions (i.e., portfolio weights) selected by the agent. The observations and rewards are generated based on a historical dataset of financial market data.
+
+During training, the PortfolioManager class interacts with the Environment class by selecting actions based on the current state (i.e., the observations), executing those actions in the environment, and receiving the resulting observations and rewards. The observations and rewards are then used to update the Actor and Critic networks in the PortfolioManager class.
+
+The Environment class also provides a method for resetting the environment to a random state at the beginning of each episode. This is important for ensuring that the agent is exposed to a diverse range of market conditions during training.
+
+In summary, the Environment class is a critical component of the deep reinforcement learning framework for financial portfolio management, as it generates the observations and rewards based on the actions selected by the agent and provides a method for resetting the environment at the beginning of each episode.

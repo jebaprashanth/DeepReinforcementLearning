@@ -1,0 +1,12 @@
+In this example, the file contains historical daily stock price data for Apple Inc. (AAPL) from January 3, 2022 to the present day (which is excluded here).
+
+Each row represents a single trading day and includes the following information:
+
+date: the date of the trading day (in the format YYYY-MM-DD)
+open: the opening stock price for the day
+high: the highest stock price during the day
+low: the lowest stock price during the day
+close: the closing stock price for the day
+volume: the trading volume for the day (i.e., the number of shares traded)
+ticker: the stock ticker symbol for the company (in this case, AAPL for Apple Inc.)
+Note that this is just an example, and the specific format and structure of the stock_data.csv file may vary depending on the requirements of the project and the source of the data.

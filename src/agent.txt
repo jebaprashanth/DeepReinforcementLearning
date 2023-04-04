@@ -1,0 +1,27 @@
+Sure, here's an overview of the PortfolioManager class in agent.py and what each method does:
+
+------------------
+__init__(...): 
+-------------------
+Initializes the PortfolioManager object, which is the agent responsible for managing the portfolio. This method takes several arguments to set up the agent's neural network, optimization, and exploration parameters.
+
+
+
+----------------------
+select_action(state): 
+----------------------
+Given a state vector as input, this method selects an action to take using the actor network and an exploration noise process.
+
+add_to_buffer(state, action, reward, next_state, done): Adds a tuple of (state, action, reward, next_state, done) to the replay buffer for later use in training the actor and critic networks.
+
+train(): Updates the actor and critic networks using a batch of data from the replay buffer. This method is called during each time step of the simulation.
+
+save_models(suffix=''): Saves the current state of the actor and critic networks to disk, with an optional suffix to differentiate different checkpoints.
+
+load_models(suffix=''): Loads the actor and critic networks from a previously saved checkpoint, with an optional suffix to specify which checkpoint to load.
+
+reset_episode(): Resets the state of the agent at the start of a new episode, including the noise process and the internal state of the environment.
+
+update_target_networks(): Updates the target actor and critic networks by blending the weights of the current networks with the target networks, as described in the DDPG algorithm. This method is called at the end of each training epoch.
+
+Overall, the PortfolioManager class serves as the main interface between the RL algorithm and the financial portfolio management problem. It implements the DDPG algorithm using PyTorch, allowing the agent to learn how to select the optimal portfolio allocation based on the current market conditions.
