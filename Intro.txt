@@ -84,13 +84,31 @@ selected portfolio allocation on the market state for the next time step.
 what the 'Actor' class do here?
 ---------------------------------------------
 
-The Actor class in the deep reinforcement learning framework proposed by the paper represents the policy network, which is a neural network that takes the current state of the market as input and outputs the recommended portfolio allocation.
+The Actor class in the deep reinforcement learning framework 
+proposed by the paper represents the policy network, 
+which is a neural network that takes the current state of 
+the market as input and outputs the recommended portfolio 
+allocation.
 
-In the context of this framework, the Actor class is used to approximate the optimal policy for the financial portfolio management problem. The policy determines the recommended portfolio allocation based on the current state of the market and the investor's desired trade-off between risk and return. The output of the Actor network is a vector of continuous values that represent the percentage of the total investment to allocate to each asset in the portfolio.
+In the context of this framework, the Actor class is used to 
+approximate the optimal policy for the financial portfolio management problem. 
+The policy determines the recommended portfolio allocation 
+based on the current state of the market and the 
+investor's desired trade-off between risk and return. 
+The output of the Actor network is a vector of continuous values 
+that represent the percentage of the total investment 
+to allocate to each asset in the portfolio.
 
-The Actor class is trained using the deep deterministic policy gradient (DDPG) algorithm, which involves updating the weights of the network based on the gradients of the expected reward with respect to the network parameters. During training, the Actor network learns to approximate the optimal policy by maximizing the expected reward over a sequence of future time steps.
+The Actor class is trained using the deep deterministic policy gradient 
+(DDPG) algorithm, which involves updating the weights of the network 
+based on the gradients of the expected reward with respect to the network parameters. 
+During training, the Actor network learns to approximate the optimal policy 
+by maximizing the expected reward over a sequence of future time steps.
 
-In summary, the Actor class plays a critical role in the deep reinforcement learning framework for financial portfolio management, as it learns to make investment decisions based on historical market data and the investor's risk preferences.
+In summary, the Actor class plays a critical role in the 
+deep reinforcement learning framework for financial portfolio management, 
+as it learns to make investment decisions based on historical market data 
+and the investor's risk preferences.
 
 
 
