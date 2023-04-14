@@ -7,6 +7,8 @@ import torch.nn.functional as F
 from models import Actor, Critic, ReplayBuffer
 from utils import OUActionNoise
 
+
+
 class PortfolioManager:
     def __init__(self, state_dim, action_dim, max_action, args):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -1,0 +1,51 @@
+----------------------------------------------
+project structure
+---------------------------------------------
+
+
+project/
+├── data/ (folder for storing historical financial data)
+│   ├── stock_data.csv
+│   └── economic_data.csv
+│
+├── models/ (folder for storing PyTorch model checkpoints)
+│   ├── actor.pth
+│   └── critic.pth
+│
+├── src/
+│   ├── agent.py (contains the PortfolioManager class)
+│   ├── env.py (contains the Environment class)
+│   ├── models.py (contains the Actor and Critic classes)
+│   ├── replay_buffer.py (contains the ReplayBuffer class)
+│   └── utils.py (contains utility functions for data preprocessing, etc.)
+│
+├── main.py (script for training and testing the agent)
+└── config.py (configuration file for hyperparameters, paths, etc.)
+
+
+
+============================================================================================
+
+In this project structure, the data folder contains the historical financial data, 
+which can be in the form of CSV files or any other suitable format. 
+The models folder is used to store the PyTorch model checkpoints, 
+which are saved periodically during training.
+
+src folder -> contains the main source code for the project. 
+agent.py -> contains the PortfolioManager class, 
+env.py -> contains the Environment class, 
+models.py -> contains the Actor and Critic classes, 
+replay_buffer.py -> contains the ReplayBuffer class, 
+utils.py -> contains utility functions for data preprocessing and other tasks.
+
+
+
+The main.py script is the entry point for the project 
+and is used to train and test the agent. 
+This script imports the necessary classes and functions from the src folder 
+and uses them to create and train the agent.
+
+config.py file contains the hyperparameters, paths, and other configurations 
+for the project. This file is used to store and manage all the settings 
+for the project in one place.
+
