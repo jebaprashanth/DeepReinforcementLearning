@@ -1,0 +1,24 @@
+Based on the information provided, I can outline the proposed major algorithm used in the research "A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem" by Zhengyao Jiang, Dixing Xu, and Jinjun Liang using PyTorch:
+
+Define the actor and critic neural network models:
+
+The actor network takes the portfolio state as input and outputs the portfolio weights.
+The critic network takes the portfolio state and action as input and outputs the Q-value.
+Define the Deep Deterministic Policy Gradient (DDPG) agent class:
+
+The agent class initializes the actor and critic networks and sets hyperparameters such as the learning rate, discount factor, and exploration noise.
+The agent class includes functions for selecting actions, updating the networks using the DDPG algorithm, and storing and sampling experience replay data.
+Define the portfolio environment:
+
+The portfolio environment class simulates the portfolio performance over a fixed time period based on the portfolio weights, asset prices, and transaction costs.
+The environment class includes functions for resetting the environment, stepping through the environment by taking actions and receiving rewards, and calculating the portfolio value.
+Train the DDPG agent using the portfolio environment:
+
+The agent interacts with the environment by selecting actions based on the current state and updating the actor and critic networks using the DDPG algorithm.
+The agent uses experience replay to sample random batches of past interactions and updates the networks using the replay buffer.
+The agent's performance is evaluated using metrics such as the Sharpe ratio and cumulative return.
+Use the trained agent to make portfolio decisions:
+
+Once the agent is trained, it can be used to make portfolio decisions in real-time based on the current market conditions.
+The agent selects actions by feeding the current portfolio state into the actor network and selecting the action with the highest predicted Q-value.
+Note: The above steps are a high-level overview of the proposed algorithm and are not a complete implementation. For a detailed implementation, please refer to the paper or the Github repository provided.

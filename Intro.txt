@@ -1,9 +1,9 @@
----------------------------------------------------------------------------------------
-can you give me overall idea about the paper. what is actually doing in simple english?
---------------------------------------------------------------------------------------
+----------------------------
+overall idea about the paper
+----------------------------
 
 
-Sure! The paper "A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem" 
+A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem
 proposes a framework for solving the financial portfolio management problem using 
 deep reinforcement learning.
 
@@ -31,9 +31,9 @@ for further research in this area.
 
 
 
-----------------------------------------------------------------------------------
-what are the classes need to be implemented to this paper. Im going to do in pytorch
------------------------------------------------------------------------------------
+---------------------------------------------
+classes need to be implemented to this paper
+---------------------------------------------
 
 
 To implement the deep reinforcement learning framework proposed in the paper, 
@@ -117,15 +117,31 @@ what does the 'Critic' class do?
 ---------------------------------------------------------------
 
 
-The Critic class in the deep reinforcement learning framework proposed by the paper represents the value network, which is a neural network that estimates the expected cumulative reward for a given state and action.
+The Critic class in the deep reinforcement learning framework 
+proposed by the paper represents the value network, 
+which is a neural network that estimates the expected cumulative reward 
+for a given state and action.
 
-In the context of this framework, the Critic class is used to approximate the expected cumulative reward for a given state-action pair, which is also known as the state-action value function or Q-function. The Q-function is a key component of many reinforcement learning algorithms, including the deep deterministic policy gradient (DDPG) algorithm used in this paper.
+In the context of this framework, the Critic class is used to approximate 
+the expected cumulative reward for a given state-action pair, 
+which is also known as the state-action value function or Q-function. 
+The Q-function is a key component of many reinforcement learning algorithms, 
+including the deep deterministic policy gradient (DDPG) algorithm used in this paper.
 
-During training, the Critic network is updated based on the temporal difference (TD) error, which is the difference between the estimated Q-value and the actual Q-value obtained from the environment. The TD error is used to adjust the weights of the network such that the Q-function becomes a better approximation of the true value function.
+During training, the Critic network is updated based on the temporal difference (TD) error, 
+which is the difference between the estimated Q-value and the actual Q-value 
+obtained from the environment. The TD error is used to adjust the weights of the network 
+such that the Q-function becomes a better approximation of the true value function.
 
-The Critic class is used in conjunction with the Actor class to update the policy network based on the estimated Q-values. Specifically, the Actor network is trained to maximize the expected Q-value over a sequence of future time steps, which encourages it to select actions that lead to higher expected cumulative reward.
+The Critic class is used in conjunction with the Actor class to update the policy network 
+based on the estimated Q-values. Specifically, the Actor network is trained to maximize 
+the expected Q-value over a sequence of future time steps, 
+which encourages it to select actions that lead to higher expected cumulative reward.
 
-In summary, the Critic class is an important component of the deep reinforcement learning framework for financial portfolio management, as it estimates the expected cumulative reward for a given state-action pair and guides the training of the Actor network.
+In summary, the Critic class is an important component of the 
+deep reinforcement learning framework for financial portfolio management, 
+as it estimates the expected cumulative reward for a given state-action pair 
+and guides the training of the Actor network.
 
 
 
