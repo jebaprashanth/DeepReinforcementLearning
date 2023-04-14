@@ -1,12 +1,2 @@
-The models/ folder is a directory where the PyTorch model checkpoints are stored 
-during and after training. A model checkpoint is a snapshot of the model's state 
-at a particular point during training. It includes the current values of 
-all the model parameters, as well as other information such as the current epoch number, 
-the optimizer state, etc.
-
-In the context of this research paper, the models/ folder 
-might contain saved checkpoints for the trained actor and critic models, 
-as well as any other models or components used in the training process. 
-These checkpoints can be loaded and used to resume training from a particular point, 
-or to make predictions with the trained model.
-
+this folder where the PyTorch model checkpoints are stored 
+during and after training. 

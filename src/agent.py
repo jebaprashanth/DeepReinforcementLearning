@@ -4,8 +4,9 @@ import torch.optim as optim
 import numpy as np
 import torch.nn.functional as F
 
-from models import Actor, Critic, ReplayBuffer
-from utils import OUActionNoise
+from models import Actor, Critic
+from replay_buffer import ReplayBuffer
+from ou_noise import OUActionNoise
 
 
 
