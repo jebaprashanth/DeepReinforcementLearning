@@ -1,9 +1,0 @@
-In this example, the file contains quarterly economic data for a particular country, including gross domestic product (GDP), inflation rate, and unemployment rate.
-
-Each row represents a single quarter and includes the following information:
-
-date: the end date of the quarter (in the format YYYY-MM-DD)
-gdp: the GDP for the quarter (in trillions of dollars)
-inflation: the inflation rate for the quarter (as a percentage)
-unemployment: the unemployment rate for the quarter (as a percentage)
-Note that this is just an example, and the specific format and structure of the economic_data.csv file may vary depending on the requirements of the project and the source of the data.
