@@ -1,21 +1,29 @@
-"""
-This implementation defines the Actor and Critic classes. 
-The Actor takes in observations and outputs actions. 
-It has a series of fully connected layers with ReLU activation, 
-followed by a final output layer with a hyperbolic tangent activation 
-to ensure that the output actions are within the range of -1 to 1. 
-The Critic takes in observations and actions and outputs the state-action value function. 
-It has a series of fully connected layers with ReLU activation, 
-followed by a final output layer with a single output value. 
-Note that the Critic class concatenates the observation and 
-action inputs before passing them through the fully connected layers.
-"""
-
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+"""
+This is PyTorch code for defining two neural network models 
+for an actor-critic reinforcement learning algorithm.
+
+Both models use PyTorch's nn.Module class as a parent class, 
+which enables the models to be saved, loaded, and trained using 
+PyTorch's built-in functionality. 
+The nn.ModuleList class is used to create a list of layers 
+that can be easily iterated over in the forward pass.
+"""
+# --------------------------------------------------------------------------------------
+
+"""
+The Actor model takes as input the observation state (obs_dim) 
+and outputs an action (action_dim) to take in the environment. 
+It has two hidden layers of size 256 each by default, 
+with the number of hidden layers and their sizes 
+specified by the hidden_sizes argument. 
+The forward method performs a feedforward pass through the layers, 
+applying a ReLU activation function to the hidden layers 
+and a hyperbolic tangent activation function to the output layer.
+"""
 class Actor(nn.Module):
     def __init__(self, obs_dim, action_dim, hidden_sizes=(256,256)):
         super().__init__()
@@ -32,6 +40,18 @@ class Actor(nn.Module):
         x = torch.tanh(self.output_layer(x))
         return x
 
+
+
+"""
+The Critic model takes as input the observation state 
+and the action taken in that state, and outputs an estimate of the value 
+of that state-action pair. It also has two hidden layers 
+of size 256 each by default, and takes in the same obs_dim 
+and action_dim arguments as the Actor model. 
+The forward method concatenates the observation and action inputs, 
+passes them through the hidden layers with ReLU activation functions, 
+and outputs a single scalar value with the output layer.
+"""
 class Critic(nn.Module):
     def __init__(self, obs_dim, action_dim, hidden_sizes=(256,256)):
         super().__init__()

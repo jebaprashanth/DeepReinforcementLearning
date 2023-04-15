@@ -8,9 +8,19 @@ from models import Actor, Critic
 from replay_buffer import ReplayBuffer
 from ou_noise import OUActionNoise
 
-
+"""
+This code defines a class PortfolioManager 
+that is used to manage the training of an RL agent for portfolio optimization. 
+It uses PyTorch as the deep learning framework.
+"""
 
 class PortfolioManager:
+
+    """
+    The __init__ function initializes the actor and critic models, 
+    target actor and critic models, optimizers, action noise, replay buffer, 
+    and hyperparameters used in training. 
+    """
     def __init__(self, state_dim, action_dim, max_action, args):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -41,12 +51,29 @@ class PortfolioManager:
         self.noise_clip = args.noise_clip
         self.batch_size = args.batch_size
 
+
+    """
+    The select_action function takes a state as input, 
+    and returns an action selected by the actor model along with action noise added to it.
+    """
     def select_action(self, state):
         state = torch.FloatTensor(state.reshape(1, -1)).to(self.device)
         action = self.actor(state).cpu().data.numpy().flatten()
         action = action + self.noise.sample()
         return np.clip(action, -self.max_action, self.max_action)
 
+
+
+    """
+    The train function is used to train the actor and critic models. 
+    It first samples a batch from the replay buffer, 
+    computes Q targets using the target actor and critic models, 
+    and then optimizes the critic model using mean-squared error loss 
+    between the Q values predicted by the critic model and the Q targets. 
+    The actor model is then optimized using the critic model's Q values 
+    as the loss function. Finally, the target actor and critic models are updated 
+    using a soft update approach.
+    """
     def train(self, replay_buffer, batch_size=128):
         # Sample batches from replay buffer
         state_batch, action_batch, next_state_batch, reward_batch, done_batch = replay_buffer.sample(batch_size)

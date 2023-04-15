@@ -26,12 +26,16 @@ project/
 
 ============================================================================================
 
-In this project structure, the data folder contains the historical financial data, 
+In this project structure, 
+
+data folder -> contains the historical financial data, 
 which can be in the form of CSV files or any other suitable format. 
-The models folder is used to store the PyTorch model checkpoints, 
+
+models folder ->  used to store the PyTorch model checkpoints, 
 which are saved periodically during training.
 
 src folder -> contains the main source code for the project. 
+
 agent.py -> contains the PortfolioManager class, 
 env.py -> contains the Environment class, 
 models.py -> contains the Actor and Critic classes, 
